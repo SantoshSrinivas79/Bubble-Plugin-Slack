@@ -1,0 +1,618 @@
+{
+    "add_to_header": true,
+    "auth": "none",
+    "authentication_url": "",
+    "calls": {
+        "AGR": {
+            "0": "A",
+            "1": "G",
+            "2": "Q",
+            "body_type": "form_data",
+            "doc_link": "https://api.slack.com/methods/oauth.access",
+            "headers": {
+                "AGf": {
+                    "key": "content-type",
+                    "private": true,
+                    "value": "application/x-www-form-urlencoded",
+                    "visibility": "hidden"
+                }
+            },
+            "initialized": true,
+            "method": "post",
+            "must_reinitialize": false,
+            "name": "🎟SlackAccessToken",
+            "params": {
+                "AGS": {
+                    "doc": "Your Slack app client_id.",
+                    "key": "client_id",
+                    "private": true,
+                    "value": ""
+                },
+                "AGT": {
+                    "doc": "Your Slack app client_secret.",
+                    "key": "client_secret",
+                    "private": true,
+                    "value": ""
+                },
+                "AGU": {
+                    "doc": "The code you got from url parameter after redirection from Auth action.",
+                    "key": "code",
+                    "optional": false,
+                    "private": true,
+                    "value": ""
+                }
+            },
+            "publish_as": "data",
+            "rank": 0,
+            "ret_value": "api.1582990038078x374905726065180700.plugin_api.AGR",
+            "should_reinitialize": true,
+            "types": "{\"plugin_api.AGR\":{\"caption\":\"🎟SlackAccessToken\",\"fields\":{\"_p_ok\":{\"ret_value\":\"boolean\",\"caption\":\"ok\",\"path\":[\"ok\"]},\"_p_access_token\":{\"ret_value\":\"text\",\"caption\":\"access_token\",\"path\":[\"access_token\"]},\"_p_token_type\":{\"ret_value\":\"text\",\"caption\":\"token_type\",\"path\":[\"token_type\"]},\"_p_scope\":{\"ret_value\":\"text\",\"caption\":\"scope\",\"path\":[\"scope\"]},\"_p_bot_user_id\":{\"ret_value\":\"text\",\"caption\":\"bot_user_id\",\"path\":[\"bot_user_id\"]},\"_p_app_id\":{\"ret_value\":\"text\",\"caption\":\"app_id\",\"path\":[\"app_id\"]},\"_p_team.name\":{\"ret_value\":\"text\",\"caption\":\"team name\",\"path\":[\"team\",\"name\"]},\"_p_team.id\":{\"ret_value\":\"text\",\"caption\":\"team id\",\"path\":[\"team\",\"id\"]},\"_p_enterprise.name\":{\"ret_value\":\"text\",\"caption\":\"enterprise name\",\"path\":[\"enterprise\",\"name\"]},\"_p_enterprise.id\":{\"ret_value\":\"text\",\"caption\":\"enterprise id\",\"path\":[\"enterprise\",\"id\"]},\"_p_authed_user.id\":{\"ret_value\":\"text\",\"caption\":\"authed_user id\",\"path\":[\"authed_user\",\"id\"]},\"_p_authed_user.scope\":{\"ret_value\":\"text\",\"caption\":\"authed_user scope\",\"path\":[\"authed_user\",\"scope\"]},\"_p_authed_user.access_token\":{\"ret_value\":\"text\",\"caption\":\"authed_user access_token\",\"path\":[\"authed_user\",\"access_token\"]},\"_p_authed_user.token_type\":{\"ret_value\":\"text\",\"caption\":\"authed_user token_type\",\"path\":[\"authed_user\",\"token_type\"]}}}}",
+            "url": "https://slack.com/api/oauth.v2.access"
+        },
+        "AGh": {
+            "doc_link": "https://api.slack.com/methods/conversations.list",
+            "headers": {
+                "AGi": {
+                    "key": "Authorization",
+                    "private": true,
+                    "value": "Bearer InsertAccessToken"
+                }
+            },
+            "initialized": true,
+            "method": "get",
+            "must_reinitialize": false,
+            "name": "💬SlackConversationLists",
+            "params": {
+                "AGk": {
+                    "doc": "Paginate through collections of data by setting the cursor parameter to a next_cursor attribute returned by a previous request's response_metadata. Default value fetches the first \"page\" of the collection. Example: dXNlcjpVMDYxTkZUVDI=",
+                    "key": "cursor",
+                    "optional": true,
+                    "private": true,
+                    "value": ""
+                },
+                "AGl": {
+                    "doc": "Set to true to exclude archived channels from the list.",
+                    "key": "exclude_archived",
+                    "optional": true,
+                    "private": true,
+                    "value": ""
+                },
+                "AGm": {
+                    "doc": "The maximum number of items to return. Fewer than the requested number of items may be returned, even if the end of the list hasn't been reached. Must be an integer no larger than 1000. Default 100.",
+                    "key": "limit",
+                    "optional": true,
+                    "private": true,
+                    "value": ""
+                },
+                "AGn": {
+                    "doc": "Mix and match channel types by providing a comma-separated list of any combination of public_channel, private_channel, mpim, im. Default: public_channel. Example: public_channel,private_channel",
+                    "key": "types",
+                    "optional": true,
+                    "private": true,
+                    "value": ""
+                }
+            },
+            "publish_as": "data",
+            "rank": 6,
+            "ret_value": "api.1582990038078x374905726065180700.plugin_api.AGh",
+            "should_reinitialize": true,
+            "types": "{\"plugin_api.AGh\":{\"caption\":\"💬SlackConversationList\",\"fields\":{\"_p_ok\":{\"ret_value\":\"boolean\",\"caption\":\"ok\",\"path\":[\"ok\"]},\"_p_channels\":{\"ret_value\":\"list.api.1582990038078x374905726065180700.plugin_api.AGh.channels\",\"caption\":\"channels\",\"path\":[\"channels\"]},\"_p_response_metadata.next_cursor\":{\"ret_value\":\"text\",\"caption\":\"response_metadata next_cursor\",\"path\":[\"response_metadata\",\"next_cursor\"]}}},\"plugin_api.AGh.channels\":{\"caption\":\"💬SlackConversationLists channel\",\"fields\":{\"_p_id\":{\"ret_value\":\"text\",\"caption\":\"id\",\"path\":[\"id\"]},\"_p_name\":{\"ret_value\":\"text\",\"caption\":\"name\",\"path\":[\"name\"]},\"_p_is_channel\":{\"ret_value\":\"boolean\",\"caption\":\"is_channel\",\"path\":[\"is_channel\"]},\"_p_is_group\":{\"ret_value\":\"boolean\",\"caption\":\"is_group\",\"path\":[\"is_group\"]},\"_p_is_im\":{\"ret_value\":\"boolean\",\"caption\":\"is_im\",\"path\":[\"is_im\"]},\"_p_created\":{\"ret_value\":\"number\",\"caption\":\"created\",\"path\":[\"created\"]},\"_p_is_archived\":{\"ret_value\":\"boolean\",\"caption\":\"is_archived\",\"path\":[\"is_archived\"]},\"_p_is_general\":{\"ret_value\":\"boolean\",\"caption\":\"is_general\",\"path\":[\"is_general\"]},\"_p_unlinked\":{\"ret_value\":\"number\",\"caption\":\"unlinked\",\"path\":[\"unlinked\"]},\"_p_name_normalized\":{\"ret_value\":\"text\",\"caption\":\"name_normalized\",\"path\":[\"name_normalized\"]},\"_p_is_shared\":{\"ret_value\":\"boolean\",\"caption\":\"is_shared\",\"path\":[\"is_shared\"]},\"_p_parent_conversation\":{\"ret_value\":\"text\",\"caption\":\"parent_conversation\",\"path\":[\"parent_conversation\"]},\"_p_creator\":{\"ret_value\":\"text\",\"caption\":\"creator\",\"path\":[\"creator\"]},\"_p_is_ext_shared\":{\"ret_value\":\"boolean\",\"caption\":\"is_ext_shared\",\"path\":[\"is_ext_shared\"]},\"_p_is_org_shared\":{\"ret_value\":\"boolean\",\"caption\":\"is_org_shared\",\"path\":[\"is_org_shared\"]},\"_p_shared_team_ids\":{\"ret_value\":\"list.text\",\"caption\":\"shared_team_ids\",\"path\":[\"shared_team_ids\"]},\"_p_is_pending_ext_shared\":{\"ret_value\":\"boolean\",\"caption\":\"is_pending_ext_shared\",\"path\":[\"is_pending_ext_shared\"]},\"_p_is_member\":{\"ret_value\":\"boolean\",\"caption\":\"is_member\",\"path\":[\"is_member\"]},\"_p_is_private\":{\"ret_value\":\"boolean\",\"caption\":\"is_private\",\"path\":[\"is_private\"]},\"_p_is_mpim\":{\"ret_value\":\"boolean\",\"caption\":\"is_mpim\",\"path\":[\"is_mpim\"]},\"_p_topic.value\":{\"ret_value\":\"text\",\"caption\":\"topic value\",\"path\":[\"topic\",\"value\"]},\"_p_topic.creator\":{\"ret_value\":\"text\",\"caption\":\"topic creator\",\"path\":[\"topic\",\"creator\"]},\"_p_topic.last_set\":{\"ret_value\":\"number\",\"caption\":\"topic last_set\",\"path\":[\"topic\",\"last_set\"]},\"_p_purpose.value\":{\"ret_value\":\"text\",\"caption\":\"purpose value\",\"path\":[\"purpose\",\"value\"]},\"_p_purpose.creator\":{\"ret_value\":\"text\",\"caption\":\"purpose creator\",\"path\":[\"purpose\",\"creator\"]},\"_p_purpose.last_set\":{\"ret_value\":\"number\",\"caption\":\"purpose last_set\",\"path\":[\"purpose\",\"last_set\"]},\"_p_num_members\":{\"ret_value\":\"number\",\"caption\":\"num_members\",\"path\":[\"num_members\"]},\"_p_previous_names\":{\"ret_value\":\"list.text\",\"caption\":\"previous_names\",\"path\":[\"previous_names\"]}}}}",
+            "url": "https://slack.com/api/conversations.list"
+        },
+        "AGq": {
+            "0": "A",
+            "1": "G",
+            "2": "p",
+            "doc_link": "https://api.slack.com/methods/users.identity",
+            "headers": {
+                "AGi": {
+                    "doc": "",
+                    "key": "Authorization",
+                    "private": true,
+                    "value": "Bearer InsertAccessToken"
+                }
+            },
+            "initialized": true,
+            "method": "get",
+            "must_reinitialize": false,
+            "name": "👵SlackUserIdentity",
+            "publish_as": "data",
+            "rank": 1,
+            "ret_value": "api.1582990038078x374905726065180700.plugin_api.AGq",
+            "should_reinitialize": true,
+            "types": "{\"plugin_api.AGq\":{\"caption\":\"👵SlackUserIdentity\",\"fields\":{\"_p_ok\":{\"ret_value\":\"boolean\",\"caption\":\"ok\",\"path\":[\"ok\"]},\"_p_user.name\":{\"ret_value\":\"text\",\"caption\":\"user name\",\"path\":[\"user\",\"name\"]},\"_p_user.id\":{\"ret_value\":\"text\",\"caption\":\"user id\",\"path\":[\"user\",\"id\"]},\"_p_user.email\":{\"ret_value\":\"text\",\"caption\":\"user email\",\"path\":[\"user\",\"email\"]},\"_p_user.image_24\":{\"ret_value\":\"text\",\"caption\":\"user image_24\",\"path\":[\"user\",\"image_24\"]},\"_p_user.image_32\":{\"ret_value\":\"text\",\"caption\":\"user image_32\",\"path\":[\"user\",\"image_32\"]},\"_p_user.image_48\":{\"ret_value\":\"text\",\"caption\":\"user image_48\",\"path\":[\"user\",\"image_48\"]},\"_p_user.image_72\":{\"ret_value\":\"text\",\"caption\":\"user image_72\",\"path\":[\"user\",\"image_72\"]},\"_p_user.image_192\":{\"ret_value\":\"text\",\"caption\":\"user image_192\",\"path\":[\"user\",\"image_192\"]},\"_p_user.image_512\":{\"ret_value\":\"text\",\"caption\":\"user image_512\",\"path\":[\"user\",\"image_512\"]},\"_p_team.id\":{\"ret_value\":\"text\",\"caption\":\"team id\",\"path\":[\"team\",\"id\"]},\"_p_team.name\":{\"ret_value\":\"text\",\"caption\":\"team name\",\"path\":[\"team\",\"name\"]},\"_p_team.domain\":{\"ret_value\":\"text\",\"caption\":\"team domain\",\"path\":[\"team\",\"domain\"]},\"_p_team.image_34\":{\"ret_value\":\"text\",\"caption\":\"team image_34\",\"path\":[\"team\",\"image_34\"]},\"_p_team.image_44\":{\"ret_value\":\"text\",\"caption\":\"team image_44\",\"path\":[\"team\",\"image_44\"]},\"_p_team.image_68\":{\"ret_value\":\"text\",\"caption\":\"team image_68\",\"path\":[\"team\",\"image_68\"]},\"_p_team.image_88\":{\"ret_value\":\"text\",\"caption\":\"team image_88\",\"path\":[\"team\",\"image_88\"]},\"_p_team.image_102\":{\"ret_value\":\"text\",\"caption\":\"team image_102\",\"path\":[\"team\",\"image_102\"]},\"_p_team.image_132\":{\"ret_value\":\"text\",\"caption\":\"team image_132\",\"path\":[\"team\",\"image_132\"]},\"_p_team.image_230\":{\"ret_value\":\"text\",\"caption\":\"team image_230\",\"path\":[\"team\",\"image_230\"]},\"_p_team.image_default\":{\"ret_value\":\"boolean\",\"caption\":\"team image_default\",\"path\":[\"team\",\"image_default\"]}}}}",
+            "url": "https://slack.com/api/users.identity"
+        },
+        "AGs": {
+            "0": "A",
+            "1": "G",
+            "2": "r",
+            "doc_link": "https://api.slack.com/methods/bots.info",
+            "headers": {
+                "AGi": {
+                    "doc": "",
+                    "key": "Authorization",
+                    "private": true,
+                    "value": "Bearer InsertAccessToken"
+                }
+            },
+            "initialized": true,
+            "method": "get",
+            "must_reinitialize": false,
+            "name": "🤖SlackBotsInfo",
+            "params": {
+                "AGt": {
+                    "doc": "Bot user to get info on. Example: B12345678",
+                    "key": "bot",
+                    "optional": false,
+                    "private": true,
+                    "value": ""
+                }
+            },
+            "publish_as": "data",
+            "rank": 4,
+            "ret_value": "api.1582990038078x374905726065180700.plugin_api.AGs",
+            "should_reinitialize": true,
+            "types": "{\"plugin_api.AGs\":{\"caption\":\"🤖SlackBotsInfo\",\"fields\":{\"_p_ok\":{\"ret_value\":\"boolean\",\"caption\":\"ok\",\"path\":[\"ok\"]},\"_p_bot.id\":{\"ret_value\":\"text\",\"caption\":\"bot id\",\"path\":[\"bot\",\"id\"]},\"_p_bot.deleted\":{\"ret_value\":\"boolean\",\"caption\":\"bot deleted\",\"path\":[\"bot\",\"deleted\"]},\"_p_bot.name\":{\"ret_value\":\"text\",\"caption\":\"bot name\",\"path\":[\"bot\",\"name\"]},\"_p_bot.updated\":{\"ret_value\":\"date_unix\",\"caption\":\"bot updated\",\"path\":[\"bot\",\"updated\"]},\"_p_bot.app_id\":{\"ret_value\":\"text\",\"caption\":\"bot app_id\",\"path\":[\"bot\",\"app_id\"]},\"_p_bot.user_id\":{\"ret_value\":\"text\",\"caption\":\"bot user_id\",\"path\":[\"bot\",\"user_id\"]},\"_p_bot.icons.image_36\":{\"ret_value\":\"text\",\"caption\":\"bot icons image_36\",\"path\":[\"bot\",\"icons\",\"image_36\"]},\"_p_bot.icons.image_48\":{\"ret_value\":\"text\",\"caption\":\"bot icons image_48\",\"path\":[\"bot\",\"icons\",\"image_48\"]},\"_p_bot.icons.image_72\":{\"ret_value\":\"text\",\"caption\":\"bot icons image_72\",\"path\":[\"bot\",\"icons\",\"image_72\"]}}}}",
+            "url": "https://slack.com/api/bots.info"
+        },
+        "AGv": {
+            "0": "A",
+            "1": "G",
+            "2": "u",
+            "doc_link": "https://api.slack.com/methods/team.info",
+            "headers": {
+                "AGi": {
+                    "doc": "",
+                    "key": "Authorization",
+                    "private": true,
+                    "value": "Bearer InsertAccessToken"
+                }
+            },
+            "initialized": true,
+            "method": "get",
+            "must_reinitialize": false,
+            "name": "👪SlackTeamInfo",
+            "params": {
+                "AGw": {
+                    "doc": "Team to get info on, if omitted, will return information about the current team. Will only return team that the authenticated token is allowed to see through external shared channels.",
+                    "key": "team",
+                    "optional": true,
+                    "private": true,
+                    "value": ""
+                }
+            },
+            "publish_as": "data",
+            "rank": 2,
+            "ret_value": "api.1582990038078x374905726065180700.plugin_api.AGv",
+            "should_reinitialize": true,
+            "types": "{\"plugin_api.AGv\":{\"caption\":\"👪SlackTeamInfo\",\"fields\":{\"_p_ok\":{\"ret_value\":\"boolean\",\"caption\":\"ok\",\"path\":[\"ok\"]},\"_p_team.id\":{\"ret_value\":\"text\",\"caption\":\"team id\",\"path\":[\"team\",\"id\"]},\"_p_team.name\":{\"ret_value\":\"text\",\"caption\":\"team name\",\"path\":[\"team\",\"name\"]},\"_p_team.domain\":{\"ret_value\":\"text\",\"caption\":\"team domain\",\"path\":[\"team\",\"domain\"]},\"_p_team.email_domain\":{\"ret_value\":\"text\",\"caption\":\"team email_domain\",\"path\":[\"team\",\"email_domain\"]},\"_p_team.icon.image_34\":{\"ret_value\":\"text\",\"caption\":\"team icon image_34\",\"path\":[\"team\",\"icon\",\"image_34\"]},\"_p_team.icon.image_44\":{\"ret_value\":\"text\",\"caption\":\"team icon image_44\",\"path\":[\"team\",\"icon\",\"image_44\"]},\"_p_team.icon.image_68\":{\"ret_value\":\"text\",\"caption\":\"team icon image_68\",\"path\":[\"team\",\"icon\",\"image_68\"]},\"_p_team.icon.image_88\":{\"ret_value\":\"text\",\"caption\":\"team icon image_88\",\"path\":[\"team\",\"icon\",\"image_88\"]},\"_p_team.icon.image_102\":{\"ret_value\":\"text\",\"caption\":\"team icon image_102\",\"path\":[\"team\",\"icon\",\"image_102\"]},\"_p_team.icon.image_132\":{\"ret_value\":\"text\",\"caption\":\"team icon image_132\",\"path\":[\"team\",\"icon\",\"image_132\"]},\"_p_team.icon.image_230\":{\"ret_value\":\"text\",\"caption\":\"team icon image_230\",\"path\":[\"team\",\"icon\",\"image_230\"]},\"_p_team.icon.image_default\":{\"ret_value\":\"boolean\",\"caption\":\"team icon image_default\",\"path\":[\"team\",\"icon\",\"image_default\"]}}}}",
+            "url": "https://slack.com/api/team.info"
+        },
+        "AGy": {
+            "0": "A",
+            "1": "G",
+            "2": "x",
+            "doc_link": "https://api.slack.com/methods/users.list",
+            "headers": {
+                "AGi": {
+                    "doc": "",
+                    "key": "Authorization",
+                    "private": true,
+                    "value": "Bearer InsertAccessToken"
+                }
+            },
+            "initialized": true,
+            "method": "get",
+            "must_reinitialize": false,
+            "name": "👪SlackTeamMembersList",
+            "params": {
+                "AGz": {
+                    "doc": "Paginate through collections of data by setting the cursor parameter to a next_cursor attribute returned by a previous request's response_metadata. Default value fetches the first \"page\" of the collection. Example: dXNlcjpVMDYxTkZUVDI=",
+                    "key": "cursor",
+                    "optional": true,
+                    "private": true,
+                    "value": ""
+                },
+                "AHA": {
+                    "doc": "Set this to true to receive the locale for users.",
+                    "key": "include_locale",
+                    "optional": true,
+                    "private": true,
+                    "value": "true"
+                },
+                "AHB": {
+                    "doc": "The maximum number of items to return. Fewer than the requested number of items may be returned, even if the end of the users list hasn't been reached. Default: 0",
+                    "key": "limit",
+                    "optional": true,
+                    "private": true,
+                    "value": ""
+                }
+            },
+            "publish_as": "data",
+            "rank": 3,
+            "ret_value": "api.1582990038078x374905726065180700.plugin_api.AGy",
+            "should_reinitialize": true,
+            "types": "{\"plugin_api.AGy\":{\"caption\":\"👪SlackTeamMember\",\"fields\":{\"_p_ok\":{\"ret_value\":\"boolean\",\"caption\":\"ok\",\"path\":[\"ok\"]},\"_p_members\":{\"ret_value\":\"list.api.1582990038078x374905726065180700.plugin_api.AGy.members\",\"caption\":\"members\",\"path\":[\"members\"]},\"_p_cache_ts\":{\"ret_value\":\"number\",\"caption\":\"cache_ts\",\"path\":[\"cache_ts\"]},\"_p_response_metadata.next_cursor\":{\"ret_value\":\"text\",\"caption\":\"response_metadata next_cursor\",\"path\":[\"response_metadata\",\"next_cursor\"]}}},\"plugin_api.AGy.members\":{\"caption\":\"👪SlackTeamMembers member\",\"fields\":{\"_p_id\":{\"ret_value\":\"text\",\"caption\":\"id\",\"path\":[\"id\"]},\"_p_team_id\":{\"ret_value\":\"text\",\"caption\":\"team_id\",\"path\":[\"team_id\"]},\"_p_name\":{\"ret_value\":\"text\",\"caption\":\"name\",\"path\":[\"name\"]},\"_p_deleted\":{\"ret_value\":\"boolean\",\"caption\":\"deleted\",\"path\":[\"deleted\"]},\"_p_color\":{\"ret_value\":\"text\",\"caption\":\"color\",\"path\":[\"color\"]},\"_p_real_name\":{\"ret_value\":\"text\",\"caption\":\"real_name\",\"path\":[\"real_name\"]},\"_p_tz\":{\"ret_value\":\"text\",\"caption\":\"tz\",\"path\":[\"tz\"]},\"_p_tz_label\":{\"ret_value\":\"text\",\"caption\":\"tz_label\",\"path\":[\"tz_label\"]},\"_p_tz_offset\":{\"ret_value\":\"number\",\"caption\":\"tz_offset\",\"path\":[\"tz_offset\"]},\"_p_profile.title\":{\"ret_value\":\"text\",\"caption\":\"profile title\",\"path\":[\"profile\",\"title\"]},\"_p_profile.phone\":{\"ret_value\":\"text\",\"caption\":\"profile phone\",\"path\":[\"profile\",\"phone\"]},\"_p_profile.skype\":{\"ret_value\":\"text\",\"caption\":\"profile skype\",\"path\":[\"profile\",\"skype\"]},\"_p_profile.real_name\":{\"ret_value\":\"text\",\"caption\":\"profile real_name\",\"path\":[\"profile\",\"real_name\"]},\"_p_profile.real_name_normalized\":{\"ret_value\":\"text\",\"caption\":\"profile real_name_normalized\",\"path\":[\"profile\",\"real_name_normalized\"]},\"_p_profile.display_name\":{\"ret_value\":\"text\",\"caption\":\"profile display_name\",\"path\":[\"profile\",\"display_name\"]},\"_p_profile.display_name_normalized\":{\"ret_value\":\"text\",\"caption\":\"profile display_name_normalized\",\"path\":[\"profile\",\"display_name_normalized\"]},\"_p_profile.fields\":{\"ret_value\":\"text\",\"caption\":\"profile fields\",\"path\":[\"profile\",\"fields\"]},\"_p_profile.status_text\":{\"ret_value\":\"text\",\"caption\":\"profile status_text\",\"path\":[\"profile\",\"status_text\"]},\"_p_profile.status_emoji\":{\"ret_value\":\"text\",\"caption\":\"profile status_emoji\",\"path\":[\"profile\",\"status_emoji\"]},\"_p_profile.status_expiration\":{\"ret_value\":\"number\",\"caption\":\"profile status_expiration\",\"path\":[\"profile\",\"status_expiration\"]},\"_p_profile.avatar_hash\":{\"ret_value\":\"text\",\"caption\":\"profile avatar_hash\",\"path\":[\"profile\",\"avatar_hash\"]},\"_p_profile.always_active\":{\"ret_value\":\"boolean\",\"caption\":\"profile always_active\",\"path\":[\"profile\",\"always_active\"]},\"_p_profile.first_name\":{\"ret_value\":\"text\",\"caption\":\"profile first_name\",\"path\":[\"profile\",\"first_name\"]},\"_p_profile.last_name\":{\"ret_value\":\"text\",\"caption\":\"profile last_name\",\"path\":[\"profile\",\"last_name\"]},\"_p_profile.image_24\":{\"ret_value\":\"text\",\"caption\":\"profile image_24\",\"path\":[\"profile\",\"image_24\"]},\"_p_profile.image_32\":{\"ret_value\":\"text\",\"caption\":\"profile image_32\",\"path\":[\"profile\",\"image_32\"]},\"_p_profile.image_48\":{\"ret_value\":\"text\",\"caption\":\"profile image_48\",\"path\":[\"profile\",\"image_48\"]},\"_p_profile.image_72\":{\"ret_value\":\"text\",\"caption\":\"profile image_72\",\"path\":[\"profile\",\"image_72\"]},\"_p_profile.image_192\":{\"ret_value\":\"text\",\"caption\":\"profile image_192\",\"path\":[\"profile\",\"image_192\"]},\"_p_profile.image_512\":{\"ret_value\":\"text\",\"caption\":\"profile image_512\",\"path\":[\"profile\",\"image_512\"]},\"_p_profile.status_text_canonical\":{\"ret_value\":\"text\",\"caption\":\"profile status_text_canonical\",\"path\":[\"profile\",\"status_text_canonical\"]},\"_p_profile.team\":{\"ret_value\":\"text\",\"caption\":\"profile team\",\"path\":[\"profile\",\"team\"]},\"_p_is_admin\":{\"ret_value\":\"boolean\",\"caption\":\"is_admin\",\"path\":[\"is_admin\"]},\"_p_is_owner\":{\"ret_value\":\"boolean\",\"caption\":\"is_owner\",\"path\":[\"is_owner\"]},\"_p_is_primary_owner\":{\"ret_value\":\"boolean\",\"caption\":\"is_primary_owner\",\"path\":[\"is_primary_owner\"]},\"_p_is_restricted\":{\"ret_value\":\"boolean\",\"caption\":\"is_restricted\",\"path\":[\"is_restricted\"]},\"_p_is_ultra_restricted\":{\"ret_value\":\"boolean\",\"caption\":\"is_ultra_restricted\",\"path\":[\"is_ultra_restricted\"]},\"_p_is_bot\":{\"ret_value\":\"boolean\",\"caption\":\"is_bot\",\"path\":[\"is_bot\"]},\"_p_is_app_user\":{\"ret_value\":\"boolean\",\"caption\":\"is_app_user\",\"path\":[\"is_app_user\"]},\"_p_updated\":{\"ret_value\":\"number\",\"caption\":\"updated\",\"path\":[\"updated\"]},\"_p_profile.image_original\":{\"ret_value\":\"text\",\"caption\":\"profile image_original\",\"path\":[\"profile\",\"image_original\"]},\"_p_profile.is_custom_image\":{\"ret_value\":\"boolean\",\"caption\":\"profile is_custom_image\",\"path\":[\"profile\",\"is_custom_image\"]},\"_p_profile.email\":{\"ret_value\":\"text\",\"caption\":\"profile email\",\"path\":[\"profile\",\"email\"]},\"_p_profile.image_1024\":{\"ret_value\":\"text\",\"caption\":\"profile image_1024\",\"path\":[\"profile\",\"image_1024\"]},\"_p_has_2fa\":{\"ret_value\":\"boolean\",\"caption\":\"has_2fa\",\"path\":[\"has_2fa\"]},\"_p_locale\":{\"ret_value\":\"text\",\"caption\":\"locale\",\"path\":[\"locale\"]},\"_p_profile.api_app_id\":{\"ret_value\":\"text\",\"caption\":\"profile api_app_id\",\"path\":[\"profile\",\"api_app_id\"]},\"_p_profile.bot_id\":{\"ret_value\":\"text\",\"caption\":\"profile bot_id\",\"path\":[\"profile\",\"bot_id\"]}}}}",
+            "url": "https://slack.com/api/users.list"
+        },
+        "AHD": {
+            "0": "A",
+            "1": "H",
+            "2": "C",
+            "body": "",
+            "body_type": "form_data",
+            "doc_link": "https://api.slack.com/methods/conversations.create",
+            "headers": {
+                "AGo": {
+                    "key": "Authorization",
+                    "private": true,
+                    "value": "Bearer InsertAccessToken"
+                },
+                "AHJ": {
+                    "key": "content-type",
+                    "private": true,
+                    "value": "application/x-www-form-urlencoded",
+                    "visibility": "hidden"
+                }
+            },
+            "initialized": true,
+            "method": "post",
+            "must_reinitialize": false,
+            "name": "💬ConversationCreate",
+            "params": {
+                "AHG": {
+                    "doc": "Name of the public or private channel to create.",
+                    "key": "name",
+                    "private": true,
+                    "value": ""
+                },
+                "AHH": {
+                    "doc": "Create a private channel instead of a public one.",
+                    "key": "is_private",
+                    "optional": true,
+                    "private": true,
+                    "value": ""
+                },
+                "AHI": {
+                    "doc": "Required for workspace apps. A list of between 1 and 30 human users that will be added to the newly-created conversation. This argument has no effect when used by classic Slack apps. Example: W1234567890,U2345678901,U3456789012",
+                    "key": "user_ids",
+                    "optional": true,
+                    "private": true,
+                    "value": ""
+                }
+            },
+            "publish_as": "action",
+            "rank": 5,
+            "ret_value": "api.1582990038078x374905726065180700.plugin_api.AHD",
+            "should_reinitialize": true,
+            "types": "{\"plugin_api.AHD\":{\"caption\":\"💬ConversationCreate\",\"fields\":{\"_p_ok\":{\"ret_value\":\"boolean\",\"caption\":\"ok\",\"path\":[\"ok\"]},\"_p_channel.id\":{\"ret_value\":\"text\",\"caption\":\"channel id\",\"path\":[\"channel\",\"id\"]},\"_p_channel.name\":{\"ret_value\":\"text\",\"caption\":\"channel name\",\"path\":[\"channel\",\"name\"]},\"_p_channel.is_channel\":{\"ret_value\":\"boolean\",\"caption\":\"channel is_channel\",\"path\":[\"channel\",\"is_channel\"]},\"_p_channel.is_group\":{\"ret_value\":\"boolean\",\"caption\":\"channel is_group\",\"path\":[\"channel\",\"is_group\"]},\"_p_channel.is_im\":{\"ret_value\":\"boolean\",\"caption\":\"channel is_im\",\"path\":[\"channel\",\"is_im\"]},\"_p_channel.created\":{\"ret_value\":\"date_unix\",\"caption\":\"channel created\",\"path\":[\"channel\",\"created\"]},\"_p_channel.is_archived\":{\"ret_value\":\"boolean\",\"caption\":\"channel is_archived\",\"path\":[\"channel\",\"is_archived\"]},\"_p_channel.is_general\":{\"ret_value\":\"boolean\",\"caption\":\"channel is_general\",\"path\":[\"channel\",\"is_general\"]},\"_p_channel.unlinked\":{\"ret_value\":\"number\",\"caption\":\"channel unlinked\",\"path\":[\"channel\",\"unlinked\"]},\"_p_channel.name_normalized\":{\"ret_value\":\"text\",\"caption\":\"channel name_normalized\",\"path\":[\"channel\",\"name_normalized\"]},\"_p_channel.is_shared\":{\"ret_value\":\"boolean\",\"caption\":\"channel is_shared\",\"path\":[\"channel\",\"is_shared\"]},\"_p_channel.parent_conversation\":{\"ret_value\":\"text\",\"caption\":\"channel parent_conversation\",\"path\":[\"channel\",\"parent_conversation\"]},\"_p_channel.creator\":{\"ret_value\":\"text\",\"caption\":\"channel creator\",\"path\":[\"channel\",\"creator\"]},\"_p_channel.is_ext_shared\":{\"ret_value\":\"boolean\",\"caption\":\"channel is_ext_shared\",\"path\":[\"channel\",\"is_ext_shared\"]},\"_p_channel.is_org_shared\":{\"ret_value\":\"boolean\",\"caption\":\"channel is_org_shared\",\"path\":[\"channel\",\"is_org_shared\"]},\"_p_channel.shared_team_ids\":{\"ret_value\":\"list.text\",\"caption\":\"channel shared_team_ids\",\"path\":[\"channel\",\"shared_team_ids\"]},\"_p_channel.is_pending_ext_shared\":{\"ret_value\":\"boolean\",\"caption\":\"channel is_pending_ext_shared\",\"path\":[\"channel\",\"is_pending_ext_shared\"]},\"_p_channel.is_member\":{\"ret_value\":\"boolean\",\"caption\":\"channel is_member\",\"path\":[\"channel\",\"is_member\"]},\"_p_channel.is_private\":{\"ret_value\":\"boolean\",\"caption\":\"channel is_private\",\"path\":[\"channel\",\"is_private\"]},\"_p_channel.is_mpim\":{\"ret_value\":\"boolean\",\"caption\":\"channel is_mpim\",\"path\":[\"channel\",\"is_mpim\"]},\"_p_channel.last_read\":{\"ret_value\":\"date_unix\",\"caption\":\"channel last_read\",\"path\":[\"channel\",\"last_read\"]},\"_p_channel.topic.value\":{\"ret_value\":\"text\",\"caption\":\"channel topic value\",\"path\":[\"channel\",\"topic\",\"value\"]},\"_p_channel.topic.creator\":{\"ret_value\":\"text\",\"caption\":\"channel topic creator\",\"path\":[\"channel\",\"topic\",\"creator\"]},\"_p_channel.topic.last_set\":{\"ret_value\":\"number\",\"caption\":\"channel topic last_set\",\"path\":[\"channel\",\"topic\",\"last_set\"]},\"_p_channel.purpose.value\":{\"ret_value\":\"text\",\"caption\":\"channel purpose value\",\"path\":[\"channel\",\"purpose\",\"value\"]},\"_p_channel.purpose.creator\":{\"ret_value\":\"text\",\"caption\":\"channel purpose creator\",\"path\":[\"channel\",\"purpose\",\"creator\"]},\"_p_channel.purpose.last_set\":{\"ret_value\":\"number\",\"caption\":\"channel purpose last_set\",\"path\":[\"channel\",\"purpose\",\"last_set\"]},\"_p_channel.priority\":{\"ret_value\":\"number\",\"caption\":\"channel priority\",\"path\":[\"channel\",\"priority\"]}}}}",
+            "url": "https://slack.com/api/conversations.create"
+        },
+        "AHL": {
+            "0": "A",
+            "1": "H",
+            "2": "K",
+            "body": "",
+            "body_type": "form_data",
+            "doc_link": "https://api.slack.com/methods/chat.postMessage",
+            "headers": {
+                "AAN": {
+                    "key": "content-type",
+                    "private": true,
+                    "value": "application/x-www-form-urlencoded",
+                    "visibility": "hidden"
+                },
+                "AGo": {
+                    "key": "Authorization",
+                    "private": true,
+                    "value": "Bearer InsertAccessToken"
+                }
+            },
+            "initialized": true,
+            "method": "post",
+            "must_reinitialize": false,
+            "name": "📬PostMessageForm",
+            "params": {
+                "AHM": {
+                    "doc": "Channel, private group, or IM channel to send message to. Can be an encoded ID, or a name. Example: C1234567890",
+                    "key": "channel",
+                    "private": true,
+                    "value": ""
+                },
+                "AHN": {
+                    "doc": "How this field works and whether it is required depends on other fields you use in your API call.",
+                    "key": "text",
+                    "optional": true,
+                    "private": true,
+                    "value": ""
+                },
+                "AHO": {
+                    "doc": "Pass true to post the message as the authed user, instead of as a bot. Defaults to false. See authorship below. Example: true",
+                    "key": "as_user",
+                    "optional": true,
+                    "private": true,
+                    "value": ""
+                },
+                "AHP": {
+                    "doc": "A JSON-based array of structured attachments, presented as a URL-encoded string. Example: [{\"pretext\": \"pre-hello\", \"text\": \"text-world\"}]",
+                    "key": "attachments",
+                    "optional": true,
+                    "private": true,
+                    "value": ""
+                },
+                "AHQ": {
+                    "doc": "A JSON-based array of structured blocks, presented as a URL-encoded string. Example: [{\"type\": \"section\", \"text\": {\"type\": \"plain_text\", \"text\": \"Hello world\"}}]",
+                    "key": "blocks",
+                    "optional": true,
+                    "private": true,
+                    "value": ""
+                },
+                "AHR": {
+                    "doc": "Emoji to use as the icon for this message. Overrides icon_url. Must be used in conjunction with as_user set to false, otherwise ignored. Example: :chart_with_upwards_trend:",
+                    "key": "icon_emoji",
+                    "optional": true,
+                    "private": true,
+                    "value": ""
+                },
+                "AHS": {
+                    "doc": "URL to an image to use as the icon for this message. Must be used in conjunction with as_user set to false, otherwise ignored. Example: http://lorempixel.com/48/48",
+                    "key": "icon_url",
+                    "optional": true,
+                    "private": true,
+                    "value": ""
+                },
+                "AHT": {
+                    "doc": "Disable Slack markup parsing by setting to false. Enabled by default. Default: True",
+                    "key": "link_names",
+                    "optional": true,
+                    "private": true,
+                    "value": ""
+                },
+                "AHU": {
+                    "doc": "Disable Slack markup parsing by setting to false. Enabled by default. Default: true",
+                    "key": "mrkdwn",
+                    "optional": true,
+                    "private": true,
+                    "value": ""
+                },
+                "AHV": {
+                    "doc": "Change how messages are treated. Defaults to none.",
+                    "key": "parse",
+                    "optional": true,
+                    "private": true,
+                    "value": ""
+                },
+                "AHW": {
+                    "doc": "Used in conjunction with thread_ts and indicates whether reply should be made visible to everyone in the channel or conversation. Defaults to false.",
+                    "key": "reply_broadcast",
+                    "optional": true,
+                    "private": true,
+                    "value": ""
+                },
+                "AHX": {
+                    "doc": "Provide another message's ts value to make this message a reply. Avoid using a reply's ts value; use its parent instead. Example: 1234567890.123456\n",
+                    "key": "thread_ts",
+                    "optional": true,
+                    "private": true,
+                    "value": ""
+                },
+                "AHY": {
+                    "doc": "Pass true to enable unfurling of primarily text-based content. Example: True",
+                    "key": "unfurl_links",
+                    "optional": true,
+                    "private": true,
+                    "value": ""
+                },
+                "AHZ": {
+                    "doc": "Pass false to disable unfurling of media content. Example: False",
+                    "key": "unfurl_media",
+                    "optional": true,
+                    "private": true,
+                    "value": ""
+                },
+                "AHa": {
+                    "doc": "Set your bot's user name. Must be used in conjunction with as_user set to false, otherwise ignored. ",
+                    "key": "username",
+                    "optional": true,
+                    "private": true,
+                    "value": ""
+                }
+            },
+            "publish_as": "action",
+            "rank": 9,
+            "ret_value": "api.1582990038078x374905726065180700.plugin_api.AHL",
+            "should_reinitialize": true,
+            "types": "{\"plugin_api.AHL\":{\"caption\":\"📬PostMessage\",\"fields\":{\"_p_ok\":{\"ret_value\":\"boolean\",\"caption\":\"ok\",\"path\":[\"ok\"]},\"_p_channel\":{\"ret_value\":\"text\",\"caption\":\"channel\",\"path\":[\"channel\"]},\"_p_ts\":{\"ret_value\":\"text\",\"caption\":\"ts\",\"path\":[\"ts\"]},\"_p_message.type\":{\"ret_value\":\"text\",\"caption\":\"message type\",\"path\":[\"message\",\"type\"]},\"_p_message.subtype\":{\"ret_value\":\"text\",\"caption\":\"message subtype\",\"path\":[\"message\",\"subtype\"]},\"_p_message.text\":{\"ret_value\":\"text\",\"caption\":\"message text\",\"path\":[\"message\",\"text\"]},\"_p_message.ts\":{\"ret_value\":\"text\",\"caption\":\"message ts\",\"path\":[\"message\",\"ts\"]},\"_p_message.username\":{\"ret_value\":\"text\",\"caption\":\"message username\",\"path\":[\"message\",\"username\"]},\"_p_message.bot_id\":{\"ret_value\":\"text\",\"caption\":\"message bot_id\",\"path\":[\"message\",\"bot_id\"]},\"_p_message.blocks\":{\"ret_value\":\"list.api.1582990038078x374905726065180700.plugin_api.AHL.message.blocks\",\"caption\":\"message blocks\",\"path\":[\"message\",\"blocks\"]}}},\"plugin_api.AHL.message.blocks\":{\"caption\":\"📬PostMessage message block\",\"fields\":{\"_p_type\":{\"ret_value\":\"text\",\"caption\":\"type\",\"path\":[\"type\"]},\"_p_block_id\":{\"ret_value\":\"text\",\"caption\":\"block_id\",\"path\":[\"block_id\"]},\"_p_text.type\":{\"ret_value\":\"text\",\"caption\":\"text type\",\"path\":[\"text\",\"type\"]},\"_p_text.text\":{\"ret_value\":\"text\",\"caption\":\"text text\",\"path\":[\"text\",\"text\"]},\"_p_text.verbatim\":{\"ret_value\":\"boolean\",\"caption\":\"text verbatim\",\"path\":[\"text\",\"verbatim\"]},\"_p_accessory.fallback\":{\"ret_value\":\"text\",\"caption\":\"accessory fallback\",\"path\":[\"accessory\",\"fallback\"]},\"_p_accessory.image_url\":{\"ret_value\":\"text\",\"caption\":\"accessory image_url\",\"path\":[\"accessory\",\"image_url\"]},\"_p_accessory.image_width\":{\"ret_value\":\"number\",\"caption\":\"accessory image_width\",\"path\":[\"accessory\",\"image_width\"]},\"_p_accessory.image_height\":{\"ret_value\":\"number\",\"caption\":\"accessory image_height\",\"path\":[\"accessory\",\"image_height\"]},\"_p_accessory.image_bytes\":{\"ret_value\":\"number\",\"caption\":\"accessory image_bytes\",\"path\":[\"accessory\",\"image_bytes\"]},\"_p_accessory.type\":{\"ret_value\":\"text\",\"caption\":\"accessory type\",\"path\":[\"accessory\",\"type\"]},\"_p_accessory.alt_text\":{\"ret_value\":\"text\",\"caption\":\"accessory alt_text\",\"path\":[\"accessory\",\"alt_text\"]},\"_p_elements\":{\"ret_value\":\"list.api.1582990038078x374905726065180700.plugin_api.AHL.elements\",\"caption\":\"elements\",\"path\":[\"elements\"]}}},\"plugin_api.AHL.elements\":{\"caption\":\"📬PostMessage element\",\"fields\":{\"_p_type\":{\"ret_value\":\"text\",\"caption\":\"type\",\"path\":[\"type\"]},\"_p_action_id\":{\"ret_value\":\"text\",\"caption\":\"action_id\",\"path\":[\"action_id\"]},\"_p_text.type\":{\"ret_value\":\"text\",\"caption\":\"text type\",\"path\":[\"text\",\"type\"]},\"_p_text.text\":{\"ret_value\":\"text\",\"caption\":\"text text\",\"path\":[\"text\",\"text\"]},\"_p_text.emoji\":{\"ret_value\":\"boolean\",\"caption\":\"text emoji\",\"path\":[\"text\",\"emoji\"]},\"_p_value\":{\"ret_value\":\"text\",\"caption\":\"value\",\"path\":[\"value\"]}}}}",
+            "url": "https://slack.com/api/chat.postMessage"
+        },
+        "AHg": {
+            "0": "A",
+            "1": "H",
+            "2": "f",
+            "doc_link": "https://api.slack.com/methods/conversations.history",
+            "headers": {
+                "AGi": {
+                    "key": "Authorization",
+                    "private": true,
+                    "value": "Bearer InsertAccessToken"
+                }
+            },
+            "initialized": true,
+            "method": "get",
+            "must_reinitialize": false,
+            "name": "💬SlackConversationHistory",
+            "params": {
+                "AGk": {
+                    "doc": "Conversation ID to fetch history for. Example: C1234567890",
+                    "key": "channel",
+                    "optional": false,
+                    "private": true,
+                    "value": ""
+                },
+                "AHh": {
+                    "doc": "Paginate through collections of data by setting the cursor parameter to a next_cursor attribute returned by a previous request's response_metadata. Default value fetches the first \"page\" of the collection. Example: dXNlcjpVMDYxTkZUVDI=",
+                    "key": "cursor",
+                    "optional": true,
+                    "private": true,
+                    "value": ""
+                },
+                "AHi": {
+                    "doc": "Include messages with latest or oldest timestamp in results only when either timestamp is specified. Default: 0. Example: true",
+                    "key": "inclusive",
+                    "optional": true,
+                    "private": true,
+                    "value": ""
+                },
+                "AHj": {
+                    "doc": "End of time range of messages to include in results. Default: now. Example: 1234567890.123456",
+                    "key": "latest",
+                    "optional": true,
+                    "private": true,
+                    "value": ""
+                },
+                "AHk": {
+                    "doc": "The maximum number of items to return. Fewer than the requested number of items may be returned, even if the end of the users list hasn't been reached. Default: 100",
+                    "key": "limit",
+                    "optional": true,
+                    "private": true,
+                    "value": ""
+                },
+                "AHl": {
+                    "doc": "Start of time range of messages to include in results. Default: 0. Example: 1234567890.123456",
+                    "key": "oldest",
+                    "optional": true,
+                    "private": true,
+                    "value": ""
+                }
+            },
+            "publish_as": "data",
+            "rank": 7,
+            "ret_value": "api.1582990038078x374905726065180700.plugin_api.AHg",
+            "should_reinitialize": true,
+            "types": "{\"plugin_api.AHg\":{\"caption\":\"💬SlackConversationHistory\",\"fields\":{\"_p_ok\":{\"ret_value\":\"boolean\",\"caption\":\"ok\",\"path\":[\"ok\"]},\"_p_messages\":{\"ret_value\":\"list.api.1582990038078x374905726065180700.plugin_api.AHg.messages\",\"caption\":\"messages\",\"path\":[\"messages\"]},\"_p_has_more\":{\"ret_value\":\"boolean\",\"caption\":\"has_more\",\"path\":[\"has_more\"]},\"_p_pin_count\":{\"ret_value\":\"number\",\"caption\":\"pin_count\",\"path\":[\"pin_count\"]},\"_p_channel_actions_ts\":{\"ret_value\":\"text\",\"caption\":\"channel_actions_ts\",\"path\":[\"channel_actions_ts\"]},\"_p_channel_actions_count\":{\"ret_value\":\"number\",\"caption\":\"channel_actions_count\",\"path\":[\"channel_actions_count\"]},\"_p_response_metadata.next_cursor\":{\"ret_value\":\"text\",\"caption\":\"response_metadata next_cursor\",\"path\":[\"response_metadata\",\"next_cursor\"]}}},\"plugin_api.AHg.messages\":{\"caption\":\"💬SlackConversationHistory message\",\"fields\":{\"_p_bot_id\":{\"ret_value\":\"text\",\"caption\":\"bot_id\",\"path\":[\"bot_id\"]},\"_p_type\":{\"ret_value\":\"text\",\"caption\":\"type\",\"path\":[\"type\"]},\"_p_text\":{\"ret_value\":\"text\",\"caption\":\"text\",\"path\":[\"text\"]},\"_p_user\":{\"ret_value\":\"text\",\"caption\":\"user\",\"path\":[\"user\"]},\"_p_ts\":{\"ret_value\":\"text\",\"caption\":\"ts\",\"path\":[\"ts\"]},\"_p_team\":{\"ret_value\":\"text\",\"caption\":\"team\",\"path\":[\"team\"]},\"_p_bot_profile.id\":{\"ret_value\":\"text\",\"caption\":\"bot_profile id\",\"path\":[\"bot_profile\",\"id\"]},\"_p_bot_profile.deleted\":{\"ret_value\":\"boolean\",\"caption\":\"bot_profile deleted\",\"path\":[\"bot_profile\",\"deleted\"]},\"_p_bot_profile.name\":{\"ret_value\":\"text\",\"caption\":\"bot_profile name\",\"path\":[\"bot_profile\",\"name\"]},\"_p_bot_profile.updated\":{\"ret_value\":\"date_unix\",\"caption\":\"bot_profile updated\",\"path\":[\"bot_profile\",\"updated\"]},\"_p_bot_profile.app_id\":{\"ret_value\":\"text\",\"caption\":\"bot_profile app_id\",\"path\":[\"bot_profile\",\"app_id\"]},\"_p_bot_profile.icons.image_36\":{\"ret_value\":\"text\",\"caption\":\"bot_profile icons image_36\",\"path\":[\"bot_profile\",\"icons\",\"image_36\"]},\"_p_bot_profile.icons.image_48\":{\"ret_value\":\"text\",\"caption\":\"bot_profile icons image_48\",\"path\":[\"bot_profile\",\"icons\",\"image_48\"]},\"_p_bot_profile.icons.image_72\":{\"ret_value\":\"text\",\"caption\":\"bot_profile icons image_72\",\"path\":[\"bot_profile\",\"icons\",\"image_72\"]},\"_p_bot_profile.team_id\":{\"ret_value\":\"text\",\"caption\":\"bot_profile team_id\",\"path\":[\"bot_profile\",\"team_id\"]},\"_p_subtype\":{\"ret_value\":\"text\",\"caption\":\"subtype\",\"path\":[\"subtype\"]},\"_p_username\":{\"ret_value\":\"text\",\"caption\":\"username\",\"path\":[\"username\"]},\"_p_client_msg_id\":{\"ret_value\":\"text\",\"caption\":\"client_msg_id\",\"path\":[\"client_msg_id\"]},\"_p_blocks\":{\"ret_value\":\"list.api.1582990038078x374905726065180700.plugin_api.AHg.blocks\",\"caption\":\"blocks\",\"path\":[\"blocks\"]},\"_p_icons.emoji\":{\"ret_value\":\"text\",\"caption\":\"icons emoji\",\"path\":[\"icons\",\"emoji\"]},\"_p_bot_link\":{\"ret_value\":\"text\",\"caption\":\"bot_link\",\"path\":[\"bot_link\"]},\"_p_attachments\":{\"ret_value\":\"list.api.1582990038078x374905726065180700.plugin_api.AHg.attachments\",\"caption\":\"attachments\",\"path\":[\"attachments\"]},\"_p_edited.user\":{\"ret_value\":\"text\",\"caption\":\"edited user\",\"path\":[\"edited\",\"user\"]},\"_p_edited.ts\":{\"ret_value\":\"text\",\"caption\":\"edited ts\",\"path\":[\"edited\",\"ts\"]},\"_p_icons.image_48\":{\"ret_value\":\"text\",\"caption\":\"icons image_48\",\"path\":[\"icons\",\"image_48\"]},\"_p_icons.image_64\":{\"ret_value\":\"text\",\"caption\":\"icons image_64\",\"path\":[\"icons\",\"image_64\"]}}},\"plugin_api.AHg.blocks\":{\"caption\":\"💬SlackConversationHistory block\",\"fields\":{\"_p_type\":{\"ret_value\":\"text\",\"caption\":\"type\",\"path\":[\"type\"]},\"_p_block_id\":{\"ret_value\":\"text\",\"caption\":\"block_id\",\"path\":[\"block_id\"]},\"_p_elements\":{\"ret_value\":\"list.api.1582990038078x374905726065180700.plugin_api.AHg.elements\",\"caption\":\"elements\",\"path\":[\"elements\"]}}},\"plugin_api.AHg.elements\":{\"caption\":\"💬SlackConversationHistory element\",\"fields\":{\"_p_type\":{\"ret_value\":\"text\",\"caption\":\"type\",\"path\":[\"type\"]},\"_p_elements\":{\"ret_value\":\"list.api.1582990038078x374905726065180700.plugin_api.AHg.elements_3\",\"caption\":\"elements\",\"path\":[\"elements\"]}}},\"plugin_api.AHg.elements_3\":{\"caption\":\"💬SlackConversationHistory element 3\",\"fields\":{\"_p_type\":{\"ret_value\":\"text\",\"caption\":\"type\",\"path\":[\"type\"]},\"_p_text\":{\"ret_value\":\"text\",\"caption\":\"text\",\"path\":[\"text\"]},\"_p_user_id\":{\"ret_value\":\"text\",\"caption\":\"user_id\",\"path\":[\"user_id\"]}}},\"plugin_api.AHg.attachments\":{\"caption\":\"💬SlackConversationHistory attachment\",\"fields\":{\"_p_title\":{\"ret_value\":\"text\",\"caption\":\"title\",\"path\":[\"title\"]},\"_p_title_link\":{\"ret_value\":\"text\",\"caption\":\"title_link\",\"path\":[\"title_link\"]},\"_p_text\":{\"ret_value\":\"text\",\"caption\":\"text\",\"path\":[\"text\"]},\"_p_fallback\":{\"ret_value\":\"text\",\"caption\":\"fallback\",\"path\":[\"fallback\"]},\"_p_image_url\":{\"ret_value\":\"text\",\"caption\":\"image_url\",\"path\":[\"image_url\"]},\"_p_from_url\":{\"ret_value\":\"text\",\"caption\":\"from_url\",\"path\":[\"from_url\"]},\"_p_image_width\":{\"ret_value\":\"number\",\"caption\":\"image_width\",\"path\":[\"image_width\"]},\"_p_image_height\":{\"ret_value\":\"number\",\"caption\":\"image_height\",\"path\":[\"image_height\"]},\"_p_image_bytes\":{\"ret_value\":\"number\",\"caption\":\"image_bytes\",\"path\":[\"image_bytes\"]},\"_p_service_icon\":{\"ret_value\":\"text\",\"caption\":\"service_icon\",\"path\":[\"service_icon\"]},\"_p_service_name\":{\"ret_value\":\"text\",\"caption\":\"service_name\",\"path\":[\"service_name\"]},\"_p_id\":{\"ret_value\":\"text\",\"caption\":\"id\",\"path\":[\"id\"]},\"_p_original_url\":{\"ret_value\":\"text\",\"caption\":\"original_url\",\"path\":[\"original_url\"]}}}}",
+            "url": "https://slack.com/api/conversations.history"
+        },
+        "AIY": {
+            "0": "A",
+            "1": "I",
+            "2": "X",
+            "body": "{\n\t\"channel\": \"InsertConversationId\",\n\n\t\"blocks\": [\n\t\t{\n\t\t\t\"type\": \"section\",\n\t\t\t\"text\": {\n\t\t\t\t\"type\": \"mrkdwn\",\n\t\t\t\t\"text\": \"Hello, Assistant to the Regional Manager Dwight! *Michael Scott* wants to know where you'd like to take the Paper Company investors to dinner tonight.\\n\\n *Please select a restaurant:*\"\n\t\t\t}\n\t\t},\n\t\t{\n\t\t\t\"type\": \"divider\"\n\t\t},\n\t\t{\n\t\t\t\"type\": \"section\",\n\t\t\t\"text\": {\n\t\t\t\t\"type\": \"mrkdwn\",\n\t\t\t\t\"text\": \"*Farmhouse Thai Cuisine*\\n:star::star::star::star: 1528 reviews\\n They do have some vegan options, like the roti and curry, plus they have a ton of salad stuff and noodles can be ordered without meat!! They have something for everyone here\"\n\t\t\t},\n\t\t\t\"accessory\": {\n\t\t\t\t\"type\": \"image\",\n\t\t\t\t\"image_url\": \"https://s3-media3.fl.yelpcdn.com/bphoto/c7ed05m9lC2EmA3Aruue7A/o.jpg\",\n\t\t\t\t\"alt_text\": \"alt text for image\"\n\t\t\t}\n\t\t},\n\t\t{\n\t\t\t\"type\": \"section\",\n\t\t\t\"text\": {\n\t\t\t\t\"type\": \"mrkdwn\",\n\t\t\t\t\"text\": \"*Kin Khao*\\n:star::star::star::star: 1638 reviews\\n The sticky rice also goes wonderfully with the caramelized pork belly, which is absolutely melt-in-your-mouth and so soft.\"\n\t\t\t},\n\t\t\t\"accessory\": {\n\t\t\t\t\"type\": \"image\",\n\t\t\t\t\"image_url\": \"https://s3-media2.fl.yelpcdn.com/bphoto/korel-1YjNtFtJlMTaC26A/o.jpg\",\n\t\t\t\t\"alt_text\": \"alt text for image\"\n\t\t\t}\n\t\t},\n\t\t{\n\t\t\t\"type\": \"section\",\n\t\t\t\"text\": {\n\t\t\t\t\"type\": \"mrkdwn\",\n\t\t\t\t\"text\": \"*Ler Ros*\\n:star::star::star::star: 2082 reviews\\n I would really recommend the  Yum Koh Moo Yang - Spicy lime dressing and roasted quick marinated pork shoulder, basil leaves, chili & rice powder.\"\n\t\t\t},\n\t\t\t\"accessory\": {\n\t\t\t\t\"type\": \"image\",\n\t\t\t\t\"image_url\": \"https://s3-media2.fl.yelpcdn.com/bphoto/DawwNigKJ2ckPeDeDM7jAg/o.jpg\",\n\t\t\t\t\"alt_text\": \"alt text for image\"\n\t\t\t}\n\t\t},\n\t\t{\n\t\t\t\"type\": \"divider\"\n\t\t},\n\t\t{\n\t\t\t\"type\": \"actions\",\n\t\t\t\"elements\": [\n\t\t\t\t{\n\t\t\t\t\t\"type\": \"button\",\n\t\t\t\t\t\"text\": {\n\t\t\t\t\t\t\"type\": \"plain_text\",\n\t\t\t\t\t\t\"text\": \"Farmhouse\",\n\t\t\t\t\t\t\"emoji\": true\n\t\t\t\t\t},\n\t\t\t\t\t\"value\": \"click_me_123\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"type\": \"button\",\n\t\t\t\t\t\"text\": {\n\t\t\t\t\t\t\"type\": \"plain_text\",\n\t\t\t\t\t\t\"text\": \"Kin Khao\",\n\t\t\t\t\t\t\"emoji\": true\n\t\t\t\t\t},\n\t\t\t\t\t\"value\": \"click_me_123\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"type\": \"button\",\n\t\t\t\t\t\"text\": {\n\t\t\t\t\t\t\"type\": \"plain_text\",\n\t\t\t\t\t\t\"text\": \"Ler Ros\",\n\t\t\t\t\t\t\"emoji\": true\n\t\t\t\t\t},\n\t\t\t\t\t\"value\": \"click_me_123\"\n\t\t\t\t}\n\t\t\t]\n\t\t}\n\t]\n}",
+            "body_type": "json",
+            "doc_link": "https://api.slack.com/interactivity/handling#payloads",
+            "headers": {
+                "AAN": {
+                    "key": "content-type",
+                    "private": true,
+                    "value": "application/json;charset=utf-8",
+                    "visibility": "hidden"
+                },
+                "AGo": {
+                    "key": "Authorization",
+                    "private": true,
+                    "value": "Bearer InsertAccessToken"
+                }
+            },
+            "initialized": true,
+            "method": "post",
+            "must_reinitialize": false,
+            "name": "📬PostMessageJson",
+            "publish_as": "action",
+            "rank": 10,
+            "ret_value": "api.1582990038078x374905726065180700.plugin_api.AIY",
+            "should_reinitialize": true,
+            "types": "{\"plugin_api.AIY\":{\"caption\":\"📬PostMessageBlock\",\"fields\":{\"_p_ok\":{\"ret_value\":\"boolean\",\"caption\":\"ok\",\"path\":[\"ok\"]},\"_p_channel\":{\"ret_value\":\"text\",\"caption\":\"channel\",\"path\":[\"channel\"]},\"_p_ts\":{\"ret_value\":\"text\",\"caption\":\"ts\",\"path\":[\"ts\"]},\"_p_message.type\":{\"ret_value\":\"text\",\"caption\":\"message type\",\"path\":[\"message\",\"type\"]},\"_p_message.subtype\":{\"ret_value\":\"text\",\"caption\":\"message subtype\",\"path\":[\"message\",\"subtype\"]},\"_p_message.text\":{\"ret_value\":\"text\",\"caption\":\"message text\",\"path\":[\"message\",\"text\"]},\"_p_message.ts\":{\"ret_value\":\"text\",\"caption\":\"message ts\",\"path\":[\"message\",\"ts\"]},\"_p_message.username\":{\"ret_value\":\"text\",\"caption\":\"message username\",\"path\":[\"message\",\"username\"]},\"_p_message.bot_id\":{\"ret_value\":\"text\",\"caption\":\"message bot_id\",\"path\":[\"message\",\"bot_id\"]},\"_p_message.blocks\":{\"ret_value\":\"list.api.1582990038078x374905726065180700.plugin_api.AIY.message.blocks\",\"caption\":\"message blocks\",\"path\":[\"message\",\"blocks\"]}}},\"plugin_api.AIY.message.blocks\":{\"caption\":\"📬PostMessageBlock message block\",\"fields\":{\"_p_type\":{\"ret_value\":\"text\",\"caption\":\"type\",\"path\":[\"type\"]},\"_p_block_id\":{\"ret_value\":\"text\",\"caption\":\"block_id\",\"path\":[\"block_id\"]},\"_p_text.type\":{\"ret_value\":\"text\",\"caption\":\"text type\",\"path\":[\"text\",\"type\"]},\"_p_text.text\":{\"ret_value\":\"text\",\"caption\":\"text text\",\"path\":[\"text\",\"text\"]},\"_p_text.verbatim\":{\"ret_value\":\"boolean\",\"caption\":\"text verbatim\",\"path\":[\"text\",\"verbatim\"]},\"_p_accessory.fallback\":{\"ret_value\":\"text\",\"caption\":\"accessory fallback\",\"path\":[\"accessory\",\"fallback\"]},\"_p_accessory.image_url\":{\"ret_value\":\"text\",\"caption\":\"accessory image_url\",\"path\":[\"accessory\",\"image_url\"]},\"_p_accessory.image_width\":{\"ret_value\":\"number\",\"caption\":\"accessory image_width\",\"path\":[\"accessory\",\"image_width\"]},\"_p_accessory.image_height\":{\"ret_value\":\"number\",\"caption\":\"accessory image_height\",\"path\":[\"accessory\",\"image_height\"]},\"_p_accessory.image_bytes\":{\"ret_value\":\"number\",\"caption\":\"accessory image_bytes\",\"path\":[\"accessory\",\"image_bytes\"]},\"_p_accessory.type\":{\"ret_value\":\"text\",\"caption\":\"accessory type\",\"path\":[\"accessory\",\"type\"]},\"_p_accessory.alt_text\":{\"ret_value\":\"text\",\"caption\":\"accessory alt_text\",\"path\":[\"accessory\",\"alt_text\"]},\"_p_elements\":{\"ret_value\":\"list.api.1582990038078x374905726065180700.plugin_api.AIY.elements\",\"caption\":\"elements\",\"path\":[\"elements\"]}}},\"plugin_api.AIY.elements\":{\"caption\":\"📬PostMessageBlock element\",\"fields\":{\"_p_type\":{\"ret_value\":\"text\",\"caption\":\"type\",\"path\":[\"type\"]},\"_p_action_id\":{\"ret_value\":\"text\",\"caption\":\"action_id\",\"path\":[\"action_id\"]},\"_p_text.type\":{\"ret_value\":\"text\",\"caption\":\"text type\",\"path\":[\"text\",\"type\"]},\"_p_text.text\":{\"ret_value\":\"text\",\"caption\":\"text text\",\"path\":[\"text\",\"text\"]},\"_p_text.emoji\":{\"ret_value\":\"boolean\",\"caption\":\"text emoji\",\"path\":[\"text\",\"emoji\"]},\"_p_value\":{\"ret_value\":\"text\",\"caption\":\"value\",\"path\":[\"value\"]}}}}",
+            "url": "https://slack.com/api/chat.postMessage"
+        },
+        "AJH": {
+            "0": "A",
+            "1": "J",
+            "2": "G",
+            "doc_link": "https://api.slack.com/methods/conversations.open",
+            "headers": {
+                "AGi": {
+                    "doc": "",
+                    "key": "Authorization",
+                    "private": true,
+                    "value": "Bearer InsertAccessToken"
+                }
+            },
+            "initialized": true,
+            "method": "get",
+            "must_reinitialize": false,
+            "name": "💬SlackConversationOpen",
+            "params": {
+                "AGk": {
+                    "doc": "Resume a conversation by supplying an im or mpim's ID. Or provide the users field instead. Example: G1234567890",
+                    "key": "channel",
+                    "optional": true,
+                    "private": true,
+                    "value": ""
+                },
+                "AHh": {
+                    "doc": "Boolean, indicates you want the full IM channel definition in the response. Example: true",
+                    "key": "return_im",
+                    "optional": true,
+                    "private": true,
+                    "value": "true"
+                },
+                "AHi": {
+                    "doc": "Comma separated lists of users. If only one user is included, this creates a 1:1 DM. The ordering of the users is preserved whenever a multi-person direct message is returned. Supply a channel when not supplying users. Example: W1234567890,U2345678901,U3456789012",
+                    "key": "users",
+                    "optional": true,
+                    "private": true,
+                    "value": ""
+                }
+            },
+            "publish_as": "data",
+            "rank": 8,
+            "ret_value": "api.1582990038078x374905726065180700.plugin_api.AJH",
+            "should_reinitialize": true,
+            "types": "{\"plugin_api.AJH\":{\"caption\":\"💬SlackConversationOpen\",\"fields\":{\"_p_ok\":{\"ret_value\":\"boolean\",\"caption\":\"ok\",\"path\":[\"ok\"]},\"_p_no_op\":{\"ret_value\":\"boolean\",\"caption\":\"no_op\",\"path\":[\"no_op\"]},\"_p_already_open\":{\"ret_value\":\"boolean\",\"caption\":\"already_open\",\"path\":[\"already_open\"]},\"_p_channel.id\":{\"ret_value\":\"text\",\"caption\":\"channel id\",\"path\":[\"channel\",\"id\"]},\"_p_channel.created\":{\"ret_value\":\"number\",\"caption\":\"channel created\",\"path\":[\"channel\",\"created\"]},\"_p_channel.is_archived\":{\"ret_value\":\"boolean\",\"caption\":\"channel is_archived\",\"path\":[\"channel\",\"is_archived\"]},\"_p_channel.is_im\":{\"ret_value\":\"boolean\",\"caption\":\"channel is_im\",\"path\":[\"channel\",\"is_im\"]},\"_p_channel.is_org_shared\":{\"ret_value\":\"boolean\",\"caption\":\"channel is_org_shared\",\"path\":[\"channel\",\"is_org_shared\"]},\"_p_channel.user\":{\"ret_value\":\"text\",\"caption\":\"channel user\",\"path\":[\"channel\",\"user\"]},\"_p_channel.last_read\":{\"ret_value\":\"text\",\"caption\":\"channel last_read\",\"path\":[\"channel\",\"last_read\"]},\"_p_channel.latest.type\":{\"ret_value\":\"text\",\"caption\":\"channel latest type\",\"path\":[\"channel\",\"latest\",\"type\"]},\"_p_channel.latest.subtype\":{\"ret_value\":\"text\",\"caption\":\"channel latest subtype\",\"path\":[\"channel\",\"latest\",\"subtype\"]},\"_p_channel.latest.text\":{\"ret_value\":\"text\",\"caption\":\"channel latest text\",\"path\":[\"channel\",\"latest\",\"text\"]},\"_p_channel.latest.ts\":{\"ret_value\":\"text\",\"caption\":\"channel latest ts\",\"path\":[\"channel\",\"latest\",\"ts\"]},\"_p_channel.latest.username\":{\"ret_value\":\"text\",\"caption\":\"channel latest username\",\"path\":[\"channel\",\"latest\",\"username\"]},\"_p_channel.latest.bot_id\":{\"ret_value\":\"text\",\"caption\":\"channel latest bot_id\",\"path\":[\"channel\",\"latest\",\"bot_id\"]},\"_p_channel.unread_count\":{\"ret_value\":\"number\",\"caption\":\"channel unread_count\",\"path\":[\"channel\",\"unread_count\"]},\"_p_channel.unread_count_display\":{\"ret_value\":\"number\",\"caption\":\"channel unread_count_display\",\"path\":[\"channel\",\"unread_count_display\"]},\"_p_channel.is_open\":{\"ret_value\":\"boolean\",\"caption\":\"channel is_open\",\"path\":[\"channel\",\"is_open\"]},\"_p_channel.priority\":{\"ret_value\":\"number\",\"caption\":\"channel priority\",\"path\":[\"channel\",\"priority\"]}}}}",
+            "url": "https://slack.com/api/conversations.open"
+        },
+        "AJI": {
+            "body": "{\n\t\"trigger_id\": \"InsertTriggerId\",\n\t\"view\": {\n\t\t\"type\": \"modal\",\n\t\t\"title\": {\n\t\t\t\"type\": \"plain_text\",\n\t\t\t\"text\": \"Modal title\"\n\t\t},\n\t\t\"blocks\": [{\n\t\t\t\t\"type\": \"section\",\n\t\t\t\t\"text\": {\n\t\t\t\t\t\"type\": \"mrkdwn\",\n\t\t\t\t\t\"text\": \"It's Block Kit...but _in a modal_\"\n\t\t\t\t},\n\t\t\t\t\"block_id\": \"section1\",\n\t\t\t\t\"accessory\": {\n\t\t\t\t\t\"type\": \"button\",\n\t\t\t\t\t\"text\": {\n\t\t\t\t\t\t\"type\": \"plain_text\",\n\t\t\t\t\t\t\"text\": \"Click me\"\n\t\t\t\t\t},\n\t\t\t\t\t\"action_id\": \"button_abc\",\n\t\t\t\t\t\"value\": \"Button value\",\n\t\t\t\t\t\"style\": \"danger\"\n\t\t\t\t}\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"type\": \"input\",\n\t\t\t\t\"label\": {\n\t\t\t\t\t\"type\": \"plain_text\",\n\t\t\t\t\t\"text\": \"Input label\"\n\t\t\t\t},\n\t\t\t\t\"element\": {\n\t\t\t\t\t\"type\": \"plain_text_input\",\n\t\t\t\t\t\"action_id\": \"input1\",\n\t\t\t\t\t\"placeholder\": {\n\t\t\t\t\t\t\"type\": \"plain_text\",\n\t\t\t\t\t\t\"text\": \"Type in here\"\n\t\t\t\t\t},\n\t\t\t\t\t\"multiline\": false\n\t\t\t\t},\n\t\t\t\t\"optional\": false\n\t\t\t}\n\t\t],\n\t\t\"close\": {\n\t\t\t\"type\": \"plain_text\",\n\t\t\t\"text\": \"Cancel\"\n\t\t},\n\t\t\"submit\": {\n\t\t\t\"type\": \"plain_text\",\n\t\t\t\"text\": \"Save\"\n\t\t},\n\t\t\"private_metadata\": \"Shhhhhhhh\",\n\t\t\"callback_id\": \"view_identifier_12\"\n\t}\n}",
+            "body_type": "json",
+            "doc_link": "https://api.slack.com/methods/views.open",
+            "headers": {
+                "AJJ": {
+                    "doc": "InsertAccessToken",
+                    "key": "Authorization",
+                    "private": true,
+                    "value": "Bearer InsertAccessToken"
+                },
+                "AJK": {
+                    "key": "content-type",
+                    "optional": false,
+                    "private": true,
+                    "value": "application/json;charset=utf-8",
+                    "visibility": "hidden"
+                }
+            },
+            "initialized": true,
+            "method": "post",
+            "must_reinitialize": false,
+            "name": "👀ViewOpen",
+            "publish_as": "action",
+            "rank": 11,
+            "ret_value": "api.1582990038078x374905726065180700.plugin_api.AJI",
+            "should_reinitialize": true,
+            "types": "{\"plugin_api.AJI\":{\"caption\":\"👀ViewOpen\",\"fields\":{\"_p_ok\":{\"ret_value\":\"boolean\",\"caption\":\"ok\",\"path\":[\"ok\"]},\"_p_view.id\":{\"ret_value\":\"text\",\"caption\":\"view id\",\"path\":[\"view\",\"id\"]},\"_p_view.team_id\":{\"ret_value\":\"text\",\"caption\":\"view team_id\",\"path\":[\"view\",\"team_id\"]},\"_p_view.type\":{\"ret_value\":\"text\",\"caption\":\"view type\",\"path\":[\"view\",\"type\"]},\"_p_view.title.type\":{\"ret_value\":\"text\",\"caption\":\"view title type\",\"path\":[\"view\",\"title\",\"type\"]},\"_p_view.title.text\":{\"ret_value\":\"text\",\"caption\":\"view title text\",\"path\":[\"view\",\"title\",\"text\"]},\"_p_view.submit.type\":{\"ret_value\":\"text\",\"caption\":\"view submit type\",\"path\":[\"view\",\"submit\",\"type\"]},\"_p_view.submit.text\":{\"ret_value\":\"text\",\"caption\":\"view submit text\",\"path\":[\"view\",\"submit\",\"text\"]},\"_p_view.blocks\":{\"ret_value\":\"list.api.1582990038078x374905726065180700.plugin_api.AJI.view.blocks\",\"caption\":\"view blocks\",\"path\":[\"view\",\"blocks\"]},\"_p_view.private_metadata\":{\"ret_value\":\"text\",\"caption\":\"view private_metadata\",\"path\":[\"view\",\"private_metadata\"]},\"_p_view.callback_id\":{\"ret_value\":\"text\",\"caption\":\"view callback_id\",\"path\":[\"view\",\"callback_id\"]},\"_p_view.external_id\":{\"ret_value\":\"text\",\"caption\":\"view external_id\",\"path\":[\"view\",\"external_id\"]},\"_p_view.hash\":{\"ret_value\":\"text\",\"caption\":\"view hash\",\"path\":[\"view\",\"hash\"]},\"_p_view.clear_on_close\":{\"ret_value\":\"boolean\",\"caption\":\"view clear_on_close\",\"path\":[\"view\",\"clear_on_close\"]},\"_p_view.notify_on_close\":{\"ret_value\":\"boolean\",\"caption\":\"view notify_on_close\",\"path\":[\"view\",\"notify_on_close\"]},\"_p_view.root_view_id\":{\"ret_value\":\"text\",\"caption\":\"view root_view_id\",\"path\":[\"view\",\"root_view_id\"]},\"_p_view.app_id\":{\"ret_value\":\"text\",\"caption\":\"view app_id\",\"path\":[\"view\",\"app_id\"]},\"_p_view.bot_id\":{\"ret_value\":\"text\",\"caption\":\"view bot_id\",\"path\":[\"view\",\"bot_id\"]}}},\"plugin_api.AJI.view.blocks\":{\"caption\":\"👀ViewOpen view block\",\"fields\":{\"_p_type\":{\"ret_value\":\"text\",\"caption\":\"type\",\"path\":[\"type\"]},\"_p_block_id\":{\"ret_value\":\"text\",\"caption\":\"block_id\",\"path\":[\"block_id\"]},\"_p_label.type\":{\"ret_value\":\"text\",\"caption\":\"label type\",\"path\":[\"label\",\"type\"]},\"_p_label.text\":{\"ret_value\":\"text\",\"caption\":\"label text\",\"path\":[\"label\",\"text\"]},\"_p_label.emoji\":{\"ret_value\":\"boolean\",\"caption\":\"label emoji\",\"path\":[\"label\",\"emoji\"]},\"_p_optional\":{\"ret_value\":\"boolean\",\"caption\":\"optional\",\"path\":[\"optional\"]},\"_p_element.type\":{\"ret_value\":\"text\",\"caption\":\"element type\",\"path\":[\"element\",\"type\"]},\"_p_element.action_id\":{\"ret_value\":\"text\",\"caption\":\"element action_id\",\"path\":[\"element\",\"action_id\"]}}}}",
+            "url": "https://slack.com/api/views.open"
+        },
+        "token_call": {
+            "method": "post",
+            "url": ""
+        }
+    },
+    "email_path": "",
+    "generate_token_from_code_uri": "",
+    "header_key": "",
+    "human": "#️⃣Slack",
+    "id_path": "",
+    "oauth_user_data_call": "",
+    "scope": "",
+    "token_data_type": false,
+    "token_param_name": "access_token"
+}

@@ -1,0 +1,11 @@
+{
+    "categories": {
+        "0": "social network",
+        "1": "media"
+    },
+    "description": "https://api.slack.com",
+    "image": "//s3.amazonaws.com/appforest_uf/f1582990879617x930339817719374100/Slack.png",
+    "license": "open_source",
+    "name": "Slack",
+    "plugin_instructions": "channels:read channels:history chat:write:bot chat:write:user team:read users:read users:read.email groups:read im:read mpim:read groups:write im:write mpim:write\n\nteam:read chat:write:bot users.profile:read "
+}

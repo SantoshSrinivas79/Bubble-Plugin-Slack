@@ -1,0 +1,24 @@
+{
+    "category": "plugins",
+    "display": "#️⃣Slack - 🔏Authorize",
+    "fields": {
+        "AGO": {
+            "caption": "🔡ClientId",
+            "doc": "Your app Client ID.",
+            "editor": "DynamicValue",
+            "name": "clientid",
+            "rank": 0,
+            "value": "text"
+        },
+        "AGP": {
+            "caption": "🔬Scope",
+            "default_val": "channels:read channels:history chat:write:bot chat:write:user team:read users:read users:read.email groups:read im:read mpim:read groups:write im:write mpim:write channels:write",
+            "doc": "Permissions to request.",
+            "editor": "DynamicValue",
+            "name": "scope",
+            "rank": 1,
+            "value": "text"
+        }
+    },
+    "type": "client_side"
+}
